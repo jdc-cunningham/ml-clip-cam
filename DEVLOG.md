@@ -54,6 +54,14 @@ I finally have a phone again... was using a flip phone for a bit
 
 So dumb... it just fell on my laptop edge (MBP) and it broke the screen lmao
 
+12:43 PM
+
+I'm laying out the parts... I'm trying not to make it too wide or too tall...
+
+The daughter board that slides into the 40-pin female header will hold the round display... it should have a case all the way around it but I'm still unsure of the wiring at this time
+
+
+
 ---
 
 ### 03/17/2024
