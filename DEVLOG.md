@@ -124,6 +124,14 @@ How long will this print... can't be as bad as 10 hrs
 
 2 hrs that's not bad, I'll print this while I'm gone
 
+3:40 PM
+
+Back from call/break
+
+Ahh man... I gotta solder the parts, though would help to have this thing printed so I can gauge the length of the wires
+
+I have to write the code that starts off in AP mode, turn it off (so can SSH, change)
+
 ---
 
 ### 03/17/2024
