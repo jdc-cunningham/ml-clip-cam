@@ -106,7 +106,23 @@ Red is ideal tomorrow is going from western winds to north western
 
 The thermals get picked up from the field and then carried to where I am that diagonal green field area
 
+2:20 PM
 
+Ugh... this is the laziest design
+
+<img src="./devlog-images/chunky.JPG"/>
+
+Unfortunately it has a lot of parts mostly due to the large components eg. step up converter/bms
+
+The clip is printed separately just because of how complicated this thing is (lots of supports already)
+
+2:24 PM
+
+How long will this print... can't be as bad as 10 hrs
+
+<img src="./devlog-images/chasis.JPG"/>
+
+2 hrs that's not bad, I'll print this while I'm gone
 
 ---
 
