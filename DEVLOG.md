@@ -1,3 +1,17 @@
+### 03/17/2024
+
+5:00 PM
+
+Alright early day from work loss of $35
+
+make it count
+
+5:41 PM
+
+Damn I feel spent still, eyes hurt
+
+Came up with a design and other purposes for this camera though
+
 ### 03/16/2024
 
 7:20 PM
