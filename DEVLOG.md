@@ -1,3 +1,61 @@
+### 03/18/2024
+
+8:57 AM
+
+Alright I actually got up early since I have a couple of things to do today
+
+8 hrs sleep vs. 10 or 12 is not bad
+
+Gonna print the test clip that is the base of the whole plastic body
+
+Then the camera/swivel hinge thing
+
+9:39 AM
+
+Back on from brief break, print is at 80%
+
+This is probably too big of an opening
+
+<img src="./devlog-images/test-clip.JPG"/>
+
+Tomorrow's gonna be amazing
+
+<img src="./devlog-images/stonks.JPG"/>
+
+9:43 AM
+
+Dang it has way too much give and too long
+
+The length is based on how long the Pi Zero W is, I'll push it outwards
+
+<img src="./devlog-images/clip.png"/>
+
+10:10 AM
+
+Alright my schedule got pushed back so I will have more time to work on this
+
+I have to fly before 3PM tomorrow that's when the lift will be strongest or after that
+
+Have to assemble it, still don't know how to use the ESP32-based display
+
+10:32 AM
+
+3rd print on hat clip... it's nasty freehanded curves
+
+11:27 AM
+
+Ugh... my dunce brain... I was in a hurry to remove the back plate of my phone and I ripped the finger print cable in half... ughhhhh I've done this before but I was just on autopilot/not careful
+
+Gotta wait another 3-4 days for a fully functional phone
+
+12:16 PM
+
+I finally have a phone again... was using a flip phone for a bit
+
+So dumb... it just fell on my laptop edge (MBP) and it broke the screen lmao
+
+---
+
 ### 03/17/2024
 
 5:00 PM
