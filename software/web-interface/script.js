@@ -2,7 +2,7 @@ let piSocket = null;
 let piSocketInterval = null;
 
 const connectToPiZero2 = () => {
-  piSocket = new WebSocket('ws://localhost:5678'); // localhost
+  piSocket = new WebSocket('ws://10.42.0.1:5678'); // localhost
 
   // connection opened, send messages to robot
   piSocket.addEventListener('open', function (event) {
