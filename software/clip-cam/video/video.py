@@ -1,3 +1,4 @@
+import os
 import time
 
 from picamera2 import Picamera2
@@ -15,7 +16,8 @@ class Video():
     if (self.recording): return
 
     self.recording = True
-    file_name = str(time.time()) + '.h264'
+    base_path = os.getcwd()
+    file_name = base_path + "/clip-cam/videos/" + str(time.time()) + '.h264'
     self.picam2.start_recording(self.encoder, file_name)
 
   def stop_recording(self):

@@ -30,3 +30,30 @@ const connectToPiZero2 = () => {
 }
 
 connectToPiZero2();
+
+let recording = false;
+let recordTimeSecs = 0;
+let recordingInterval;
+
+const recordBtn = document.getElementById('record-btn');
+const timeDisp = document.getElementById('time-elapsed');
+
+const startClock = () => {
+  if (recording) {
+    recordingInterval = setInterval(() => {
+      recordTimeSecs += 1;
+      timeDisp.innerText = `${recordTimeSecs} + seconds`; // can prettify later
+    }, 1000);
+  } else {
+    clearInterval(recordingInterval);
+    timeDisp.innerText = '0:00';
+  }
+}
+
+recordBtn.addEventListener('click', () => {
+  recording = !recording;
+
+  piSocket.send(recording ? 'stop' : 'record');
+
+  startClock();
+});
