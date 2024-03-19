@@ -1,7 +1,7 @@
 import os
 
 class AP():
-  def __init__():
+  def __init__(self):
     # you could put this in a .env file
     # no way to stop this unless reboot
     # need thread so not blocking
