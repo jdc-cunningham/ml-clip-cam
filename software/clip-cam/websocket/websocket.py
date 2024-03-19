@@ -2,11 +2,16 @@ import asyncio
 import websockets
 
 class WebSocket():
-  def __init__(self):
+  def __init__(self, video):
     self.socket = None
+    self.video = video
 
   async def recvd_msg(self, msg) -> bool:
-    print(msg)
+    if (msg == 'record'):
+      self.video.start_recording()
+
+    if (msg == 'stop'):
+      self.video.stop_recording()
 
   async def socket_listener(self, socket):
     while True:
