@@ -209,7 +209,19 @@ Ooh the 1080P 50FPS files are big ha
 
 sweet... nice
 
+1:48 PM
 
+Hmm.... I just need a basic server
+
+Apache would be fine
+
+Then python runs in the backend with a socket controller
+
+AP runs too
+
+1:54 PM
+
+Man I am low on time, relying on code I've written in the past and making it super ugly
 
 ---
 
