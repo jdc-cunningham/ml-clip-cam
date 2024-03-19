@@ -1,4 +1,4 @@
-import os
+import subprocess
 import time
 
 class AP():
@@ -9,7 +9,10 @@ class AP():
     print('ap')
 
   def start():
-    os.system("sudo nmcli device wifi hotspot ssid rpi_wifi password 1234test")
+    cmd = "sudo nmcli device wifi hotspot ssid rpi_wifi password 1234test"
+
+    # https://stackoverflow.com/questions/52231021/execute-shell-command-using-python-subprocess
+    subprocess.Popen(cmd, stdout = subprocess.PIPE, shell = True)
 
     while True():
       print('ap running')
