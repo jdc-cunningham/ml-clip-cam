@@ -179,6 +179,38 @@ Quick food break
   - bridge with frontend via websocket
   - button on page that disables AP mode (this could be optional, not for field)
 
+1:20 PM
+
+Can he do it?
+
+1:24 PM
+
+OMG it is an amazing day outside... reeeeee I gotta get out there, this has to work
+
+720p though sucks
+
+1:30 PM
+
+Damn the installation of picamera2 takes a min, it's over 600MB
+
+1:34 PM
+
+Oh damn... I forgot how much vibration is in this thing
+
+That could be a problem
+
+We're commited
+
+I'm not sure if reducing fps would help
+
+1:38 PM
+
+Ooh the 1080P 50FPS files are big ha
+
+sweet... nice
+
+
+
 ---
 
 ### 03/18/2024
@@ -320,8 +352,6 @@ I have to write the code that starts off in AP mode, turn it off (so can SSH, ch
 Back, bandaid on my pinkey, bangage on arm
 
 Man the print is so brittle/weak... I already broke it trying to get the support off
-
-
 
 ---
 
