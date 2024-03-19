@@ -239,6 +239,12 @@ Have not confirmed that it works though
 
 Only way out is to turn it off/on again at this time till I write that fancy bit in
 
+3:00 PM
+
+Oh no supposed to be leaving now
+
+So close, can't seem to run these two things at the same time
+
 ---
 
 ### 03/18/2024
