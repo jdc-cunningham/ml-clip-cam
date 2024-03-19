@@ -10,6 +10,166 @@ reprinting the chasis 2hrs 38mins
 
 I was thinking if the RPi AP interface hosts videos (after converting .h264 to .mp4) then they can be viewed on the web interface, that would be nice for verifying that it's all working
 
+9:57 AM
+
+Alright... focus mode, kornholio engaged
+
+Gotta write that software
+
+Got things charging, printing... getting ready to fly, I'll also take out the RPi HQ cam again with the 16mm to try it out more
+
+10:03 AM
+
+Trying to find the IP
+
+Interface will be very basic like this
+
+<img src="./devlog-images/basic-interface.JPG"/>
+
+10:12 AM
+
+Omg... stuck trying to get the ip address lmao, for some reason it won't show up on arp-scan
+
+<img src="./devlog-images/no-arpy.JPG"/>
+
+I don't have a keyboard that goes into the micro usb...
+
+10:15 AM
+
+Alright, stole OTG cable from pi zero 1 non-w that it uses for usb-wifi adapter
+
+it did show up huh... just won't respond to ssh
+
+I'm reflashing the SD card
+
+10:25 AM
+
+I haven't watched an rpi bootup in a bit, says "generating 391 keys" or something
+
+10:31 AM
+
+I don't get it, iwgetid suggests it's on the network but I can't ping anything
+
+hopefully the board isn't damaged somehow like non-functioning wifi
+
+10:44 AM
+
+OMG... thank you internet
+
+this guy fixed it
+
+https://forums.debian.net/viewtopic.php?t=155154
+
+the etc resolv fix with 1.1.1.1
+
+10:47 AM
+
+OMG this is torture, they turned the water off in my apt and I can't wash my hands! They have flux on them... yuckkkkkkk ahhhh reeeeeeee
+
+Okay back on track now that the RPi is ssh'able
+
+10:50 AM
+
+Or not... huh
+
+damn, when it restarts the file is overwritten
+
+10:58 AM
+
+Fuhhh why am I stuck on this man... maybe an update will fix it
+
+11:10 AM
+
+I got lucky I did my morning shower/teeth routine before the water was cut off
+
+Idk how this got fixed, I tried this
+
+https://raspberrypi.stackexchange.com/questions/38834/how-to-prevent-etc-resolv-conf-from-being-overwritten
+
+and it's working now but the resolv.conf file looks the same...
+
+omg... it was now it stopped wtf...
+
+ugh... damn it
+
+I need this AP
+
+I don't understand man... the modular pi uses the same OS it's fine
+
+released 3/15/2024 hmm...
+
+I'm gonna use the one from 3-13 with balena etcher
+
+11:18 AM
+
+Hmm... did I goof the switch position?
+
+Hmm... I mean if the switch is not inline with the battery then there will be continuous bleed until the BMS shuts it off... which I guess is the purpose
+
+But what I don't understand is how does it charge the battery if it's in the off state... wtf
+
+It clearly does... I must have drawn the wrong diagram
+
+Yeah... so on the mpicam the switch is on the output... oof dumb
+
+11:41 AM
+
+Ugh... still stuck on bad wireless connection to RPi damn it
+
+If it is hardware I can swap to another pi... solder the female header board again later
+
+11:51 AM
+
+yeah this chasis design is bad
+
+I keep snapping the supports off, I was able to fix it but not good for reproduction
+
+have to be careful removing the supports, pull/push from the sides
+
+If you go with vertical boards the profile would be smaller, the power-related boards I mean
+
+2 layers instead of 3
+
+I got some super glue fumes into my eye damn from a soldering iron, dumb
+
+11:54 AM
+
+OMG... it still doesn't work
+
+I'll try another OS then another pi
+
+12:01 PM
+
+Finally water is back on, can wash my hands (satisfied face wash meme)
+
+Ugh... trying 12/11/2024 bookworm
+
+12:13 PM
+
+Okay... so I tried a new pi and it works... guess this one is bad damn
+
+It does work but you gotta mess around with it... hmm
+
+12:15 PM
+
+Fuhhhh I gotta solder again damn
+
+12:43 PM
+
+Alright it's assembled now
+
+Used a bread tie to keep the ribbon cable down lol that's normally kept down by a top board
+
+12:50 PM
+
+Damn it's assembled but I already see problems, like it swivels easily since I rotate to throw the plane, that can be a problem
+
+Might cheat and use tape or something for now, till I add a fix for a new version
+
+It's pretty legit though like it looks goofy but it's smaller than the ML Hat Cam
+
+
+
 ---
 
 ### 03/18/2024
