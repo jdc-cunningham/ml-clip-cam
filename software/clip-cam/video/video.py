@@ -17,7 +17,7 @@ class Video():
 
     self.recording = True
     base_path = os.getcwd()
-    file_name = base_path + "/clip-cam/videos/" + str(time.time()) + '.h264'
+    file_name = base_path + "/videos/" + str(time.time()) + '.h264'
     self.picam2.start_recording(self.encoder, file_name)
 
   def stop_recording(self):
