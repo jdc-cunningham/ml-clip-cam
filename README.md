@@ -2,7 +2,7 @@
 
 This is for filming an RC plane or POV recording
 
-<img src="sketch.JPG"/>
+<img src="hot.JPG"/>
 
 The ML is just finding the RC plane in the sky, focus is for me to learn more about training my own model.
 

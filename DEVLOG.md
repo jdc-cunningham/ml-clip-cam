@@ -168,7 +168,16 @@ Might cheat and use tape or something for now, till I add a fix for a new versio
 
 It's pretty legit though like it looks goofy but it's smaller than the ML Hat Cam
 
+1:03 PM
 
+Quick food break
+
+- [ ] AP mobile controller
+  - systemd (runs on boot)
+  - host page/connect with phone (pretty wifi name)
+  - code that does recording (start/stop)
+  - bridge with frontend via websocket
+  - button on page that disables AP mode (this could be optional, not for field)
 
 ---
 
