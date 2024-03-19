@@ -1,3 +1,17 @@
+### 03/19/2024
+
+8:41 AM
+
+Man's been getting up, it is cold af but will warm up later
+
+reprinting the chasis 2hrs 38mins
+
+9:04 AM
+
+I was thinking if the RPi AP interface hosts videos (after converting .h264 to .mp4) then they can be viewed on the web interface, that would be nice for verifying that it's all working
+
+---
+
 ### 03/18/2024
 
 8:57 AM
@@ -131,6 +145,14 @@ Back from call/break
 Ahh man... I gotta solder the parts, though would help to have this thing printed so I can gauge the length of the wires
 
 I have to write the code that starts off in AP mode, turn it off (so can SSH, change)
+
+6:39 PM
+
+Back, bandaid on my pinkey, bangage on arm
+
+Man the print is so brittle/weak... I already broke it trying to get the support off
+
+
 
 ---
 

@@ -1,6 +1,6 @@
 ### ML Clip Cam
 
-This is for filming an RC plane
+This is for filming an RC plane or POV recording
 
 <img src="sketch.JPG"/>
 
