@@ -25,3 +25,8 @@ button, #time-elapsed {
   font-size: 2rem;
   margin-top: 0.5rem;
 }
+
+#socket-status {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
