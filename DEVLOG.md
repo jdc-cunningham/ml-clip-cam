@@ -245,6 +245,18 @@ Oh no supposed to be leaving now
 
 So close, can't seem to run these two things at the same time
 
+3:15 PM
+
+I might get super desperate here and just have the code auto record when turning on
+
+I have to leave by 3:30 PM
+
+so I can still get thermals/actually fly
+
+3:28 PM
+
+I have to go... I have it set to record every 15 mins
+
 ---
 
 ### 03/18/2024
