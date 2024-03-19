@@ -229,7 +229,15 @@ Okay at this point I have a working controller/python code to start/stop video r
 
 What I need to do now is do the AP startup and make sure it all works from wifi/local host
 
+2:50 PM
 
+OMG so close...
+
+I'm seeing the interface via AP-hosted web page
+
+Have not confirmed that it works though
+
+Only way out is to turn it off/on again at this time till I write that fancy bit in
 
 ---
 
