@@ -1,4 +1,5 @@
 import os
+import time
 
 class AP():
   def __init__(self):
@@ -9,3 +10,7 @@ class AP():
 
   def start():
     os.system("sudo nmcli device wifi hotspot ssid rpi_wifi password 1234test")
+
+    while True():
+      print('ap running')
+      time.sleep(1)
