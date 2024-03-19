@@ -23,3 +23,10 @@ class Video():
   def stop_recording(self):
     self.picam2.stop_recording()
     self.recording = False
+
+  # https://stackoverflow.com/a/2632251
+  def get_file_count(self):
+    base_path = os.getcwd()
+    capture_path = base_path + "/videos/"
+    # -1 for gitkeep file
+    return len([name for name in os.listdir(capture_path) if os.path.isfile(os.path.join(capture_path, name))]) - 1
