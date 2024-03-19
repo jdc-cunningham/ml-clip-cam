@@ -25,7 +25,7 @@ class WebSocket():
       await asyncio.sleep(0.1)
 
   async def socket_main(self):
-    async with websockets.serve(self.socket_listener, "192.168.1.248", 5678):
+    async with websockets.serve(self.socket_listener, "localhost", 5678):
       await asyncio.Future()
 
   def start(self):

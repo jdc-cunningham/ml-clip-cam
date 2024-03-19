@@ -2,8 +2,9 @@
 from threading import Thread
 from websocket.websocket import WebSocket
 from video.video import Video
+from ap.ap import AP
 
-# update_camera_values from videostream
+ap = AP()
 video = Video()
 socket = WebSocket(video)
 

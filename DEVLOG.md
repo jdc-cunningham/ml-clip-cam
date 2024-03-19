@@ -223,6 +223,14 @@ AP runs too
 
 Man I am low on time, relying on code I've written in the past and making it super ugly
 
+2:35 PM
+
+Okay at this point I have a working controller/python code to start/stop video recordings...
+
+What I need to do now is do the AP startup and make sure it all works from wifi/local host
+
+
+
 ---
 
 ### 03/18/2024
