@@ -2,18 +2,11 @@ import asyncio
 import websockets
 
 class WebSocket():
-  def __init__(self, update_value):
+  def __init__(self):
     self.socket = None
-    self.update_value = update_value
 
   async def recvd_msg(self, msg) -> bool:
-    if ('iso' in msg):
-      val = msg.split(',')[1]
-      self.update_value('iso', val)
-
-    if ('shutter' in msg):
-      val = msg.split(',')[1]
-      self.update_value('shutter', val)
+    print(msg)
 
   async def socket_listener(self, socket):
     while True:
