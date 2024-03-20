@@ -1,3 +1,8 @@
+- [ ] make 3-prong design update
+- [ ] program LCD and bridge GPIO to control RPi
+- [ ] start recording footage, fix it
+- [ ] do ML
+
 ### 03/19/2024
 
 8:41 AM
