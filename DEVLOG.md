@@ -257,6 +257,38 @@ so I can still get thermals/actually fly
 
 I have to go... I have it set to record every 15 mins
 
+6:47 PM
+
+Doing laundry
+
+I had an amazing flight... I wish my clip cam captured but I doubt it... since idk why I decided to use 15 min blocks... I hope I captured something... the clip cam also swings to the left (I launch to the left) ugh...
+
+Gotta fix that
+
+I also freaking dropped my transmitter like a dumbass haha, I was lucky to caught the plane in a loop and recover
+
+Saw a cool hawk moth thing, flying lobster, that was random
+
+7:45 PM
+
+Nooooooo at least I got something, but most of the videos failed... oh man... I should not have used 15 minutes
+
+10:20 PM
+
+yeah... so moving video files by filezilla is taking too long, using OTG USB cable
+
+gotta get me another one at some point
+
+thankfully there are actually quite a few videos
+
+hopefully they are from flying not testing
+
+I forgot to turn the service off that was doing the auto recording so it was making more videos
+
+I got some great footage though
+
+Now dealing with the pain of syncing audio files with randomly recorded videos oof
+
 ---
 
 ### 03/18/2024
