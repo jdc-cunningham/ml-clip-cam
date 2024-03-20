@@ -294,6 +294,10 @@ I got some great footage though
 
 Now dealing with the pain of syncing audio files with randomly recorded videos oof
 
+11:39 PM
+
+OMG... I got the boomer thermal on video! That's worth it, I succeeded yes
+
 ---
 
 ### 03/18/2024
