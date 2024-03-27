@@ -65,3 +65,9 @@ I have programmed Arduino before with this mac even an ESP-01 device
 1:09 PM
 
 Trying it on Linux
+
+1:33 PM
+
+Lol this one has "port doesn't exist"
+
+damn
