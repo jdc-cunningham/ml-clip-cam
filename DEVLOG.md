@@ -113,3 +113,9 @@ Jacob please focus
 Need to do brief workout, I want to get more sculpted since I've dropped enough weight to be noticeable again, still have like 15 lbs to go
 
 I will engage the Kornholio soon
+
+3:21 PM
+
+Alright weak-ass 5 min workout is done, not Kornholio yet but I forgot the Tom Tom Holy F song used in Invincible S1 damn that's a good workout song
+
+Unleash the power, see the future
