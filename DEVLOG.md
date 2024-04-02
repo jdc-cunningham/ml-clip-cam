@@ -72,3 +72,22 @@ Probably makes sense regarding random peripherals having same path
 
 I see the serial monitor though baud rate of 115200
 
+1:08 PM
+
+Distracted by life (poor)
+
+1:20 PM
+
+Alright what do I want to do...
+
+1:23 PM
+
+Here's an interface
+
+<img src="basic-video-recording-ui.JPG"/>
+
+I feel bad that this is all this UI will do... but more happens underneath eg. storing IMU values as the video records
+
+1:36 PM
+
+Setting up git on the laptop
