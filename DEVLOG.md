@@ -139,3 +139,9 @@ Ugh... I got used to the mac keyboard, keep pushing wrong buttons particularly f
 Making progress, flashed first code but it's wrong
 
 Need to test software serial interface with RPi next
+
+4:40 PM
+
+Damn I gotta eat, my stomach hurts
+
+Will be back
