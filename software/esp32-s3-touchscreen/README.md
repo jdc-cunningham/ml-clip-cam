@@ -4,7 +4,7 @@ Please note that this code is based on the demo code provided by waveshare here:
 
 https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-1.28#Arduino_IDE_Sample
 
-click on sample demo takes you to:
+clicking on "sample demo" takes you to:
 
 https://files.waveshare.com/wiki/ESP32-S3-Touch-LCD-1.28/Esp32-s3-touch-lcd-1.28-code.zip
 
