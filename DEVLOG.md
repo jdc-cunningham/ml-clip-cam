@@ -91,3 +91,13 @@ I feel bad that this is all this UI will do... but more happens underneath eg. s
 1:36 PM
 
 Setting up git on the laptop
+
+2:50 PM
+
+Back from brief break
+
+I did realize that serial is probably easy, assuming it works like other "arduino" platforms eg. bring in the serial library and specify pins then it works... have to see
+
+I'm thinking I may still have dedicated button pins just because
+
+I could have separate threads and not block a primary communication line
