@@ -119,3 +119,23 @@ I will engage the Kornholio soon
 Alright weak-ass 5 min workout is done, not Kornholio yet but I forgot the Tom Tom Holy F song used in Invincible S1 damn that's a good workout song
 
 Unleash the power, see the future
+
+3:28 PM
+
+So hardware serial seems related to IMU and touch control
+
+So I'll try software serial which usually is not as reliable but will see
+
+3:40 PM
+
+First thing I have to check is if the software serial is detected by the RPi
+
+3:49 PM
+
+Ugh... I got used to the mac keyboard, keep pushing wrong buttons particularly for ctrl
+
+4:30 PM
+
+Making progress, flashed first code but it's wrong
+
+Need to test software serial interface with RPi next
