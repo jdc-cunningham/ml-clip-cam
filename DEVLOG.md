@@ -145,3 +145,13 @@ Need to test software serial interface with RPi next
 Damn I gotta eat, my stomach hurts
 
 Will be back
+
+5:11 PM
+
+That was a waste almost... Shin ramen is too spicy/hot, burns my mouth
+
+The weather is great right now, it is supposed to be rainy
+
+I need redemption for failing to save images last week
+
+So I'll go to the park for a bit, hopefully no flat this time lol
