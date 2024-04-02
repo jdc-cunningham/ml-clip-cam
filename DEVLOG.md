@@ -101,3 +101,9 @@ I did realize that serial is probably easy, assuming it works like other "arduin
 I'm thinking I may still have dedicated button pins just because
 
 I could have separate threads and not block a primary communication line
+
+3:03 PM
+
+Holy f
+
+Jacob please focus
