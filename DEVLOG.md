@@ -1,3 +1,34 @@
+- [x] get basic understanding of demo code wrt:
+  - how to draw something
+  - how to get touch input
+  - how to access imu values
+- [ ] talk to RPi
+  - basic is just high/low GPIO out
+  - serial/i2c is more desirable
+- [ ] bridge touchscreen with python
+
+### 04/03/2024
+
+11:34 AM
+
+Alright I have some sleep today, not terrible but not great
+
+I want to get this done becuase I have to start another project
+
+Today's my last day off too sucks
+
+I used to only work 4 days (4x10) but can't afford it, need to work overtime
+
+11:40 AM
+
+Engaging the Kornholio now
+
+Had a scare this morning, thought my SSD died, had to pull the power on desktop for it to recognize my drive
+
+
+
+---
+
 ### 04/02/2024
 
 11:51 AM
