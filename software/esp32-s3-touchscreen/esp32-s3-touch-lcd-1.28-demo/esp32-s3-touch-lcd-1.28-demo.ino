@@ -52,7 +52,9 @@ String format_recording_time() {
   int rec_time_s = get_recording_time_s();
 
   if (rec_time_s > 60) {
-    return String(floor(rec_time_s / 60), 0) + ":" + String(check_leading_zero(rec_time_s % 60));
+    int f_to_int = floor(rec_time_s / 60);
+
+    return String(f_to_int) + ":" + String(check_leading_zero(rec_time_s % 60));
   } else {
     return "0:" + check_leading_zero(rec_time_s);
   }
@@ -60,9 +62,21 @@ String format_recording_time() {
 
 void draw_recording_time() {
   if (recording) {
+    int elapsed_ms = millis() - rec_start_time_ms; // this is a double process, done in fcn below
     String elapsed_time = format_recording_time();
+
+    int x_offset = 0;
+
+    // auto center
+    if (elapsed_ms > 61000) {
+      x_offset = 5;
+    }
+
+    // could go 3 digits but that would be nuts eg. 100 minutes
+    // battery life currently around 2 hrs (700mAh) but unlikely to record that long
+
     // .c_str() https://stackoverflow.com/a/16810536
-    Paint_DrawString_EN(100, 100, elapsed_time.c_str(), &Font24, WHITE, BLACK);
+    Paint_DrawString_EN(85 - x_offset, 100, elapsed_time.c_str(), &Font24, WHITE, BLACK);
   }
 }
 
@@ -73,7 +87,7 @@ void draw_recording_text() {
 }
 
 void draw_recording_circle() {
-  bool on = recording_tick > 0 && recording_tick % 14 == 0;
+  bool on = recording_tick > 0 && recording_tick % 18 == 0; // 16 is solid
 
   if (on) {
     Paint_DrawCircle(190, 150, 8, RED, DOT_PIXEL_2X2, DRAW_FILL_FULL);

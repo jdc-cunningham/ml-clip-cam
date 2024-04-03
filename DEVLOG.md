@@ -39,6 +39,10 @@ I was making good progress but when trying to display time my int to string conv
 
 The code is getting nasty already, haven't even touched ESP32 to RPi yet
 
+2:10 PM
+
+Screwing around with this weird string print shifting related to truncated float
+
 
 
 ---
