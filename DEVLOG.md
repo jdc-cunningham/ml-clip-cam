@@ -73,6 +73,13 @@ Apparently i2c is slower than uart ugh
 
 Ugh... just not reliable damn
 
+4:40 PM
+
+You are failing doctor
+
+Almost went bitbang i2c route
+
+
 
 ---
 

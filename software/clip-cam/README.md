@@ -2,6 +2,6 @@
 
 ### Dependencies
 
-Note: software serial must be enabled via raspi-config
+Note: i2c must be enabled via raspi-config
 
-Also needs `pyserial` for bookworm it's via `sudo apt install python3-serial`
+Also needs `pyserial` for bookworm it's via `sudo apt install python3-smbus`

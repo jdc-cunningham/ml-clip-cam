@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include "LCD_Test.h"
 #include <SoftwareSerial.h>
+#include <Wire.h>
 
 UWORD Imagesize = LCD_1IN28_HEIGHT * LCD_1IN28_WIDTH * 2;
 UWORD *BlackImage;
@@ -12,6 +13,7 @@ CST816S touch(6, 7, 13, 5);	// sda, scl, rst, irq
 #define ACTION_BTN 17 // eg. start/stop recording
 
 // EspSoftwareSerial::UART SoftSerial;
+byte data_to_echo = 0;
 
 // resolution 240x240
 
@@ -130,6 +132,7 @@ void setup() {
   // software serial to pi
   // SoftSerial.begin(38400, SWSERIAL_8N1, SS_PORT_TX, SS_PORT_TX, false);
   Serial1.begin(115200, SERIAL_8N1, SS_PORT_RX, SS_PORT_TX);
+  Serial1.setTimeout(1);
 
   if (!Serial1) {
     Serial.println("failed to start soft serial");
@@ -205,6 +208,10 @@ void setup() {
         toggle_recording();
         last_touch = millis();
       }
+    }
+
+    if (Serial1.available()) {
+      Serial.println(Serial1.readString());
     }
 
     delay(1); // 60 fps
