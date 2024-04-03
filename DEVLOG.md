@@ -29,6 +29,16 @@ Had a scare this morning, thought my SSD died, had to pull the power on desktop 
 
 Had to fix this inotify fs watches thing
 
+1:12 PM
+
+Back from brief break
+
+I was making good progress but when trying to display time my int to string conversion is having problems, crashes display
+
+1:35 PM
+
+The code is getting nasty already, haven't even touched ESP32 to RPi yet
+
 
 
 ---

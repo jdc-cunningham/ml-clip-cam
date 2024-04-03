@@ -13,9 +13,11 @@ CST816S touch(6, 7, 13, 5);	// sda, scl, rst, irq
 
 // resolution 240x240
 
+int delay_tick = 0; // use for splitting specific delays eg. 16ms 60fps
 bool recording = false;
 int recording_tick = 0; // increment every loop
 int recording_time_ms = 0; // ms increment
+int rec_start_time_ms = 0;
 int action_btn_touch_area[2][2] = {{50, 170}, {190, 210}};
 int last_touch = 0;
 
@@ -34,28 +36,25 @@ void clear_screen() {
 }
 
 int get_recording_time_s() {
-  return recording_time_ms > 1000 ? floor(recording_time_ms / 1000) : 0;
+  int elapsed_time = millis() - rec_start_time_ms;
+  return elapsed_time > 1000 ? floor(elapsed_time / 1000) : 0;
 }
 
 String check_leading_zero(int sec) {
   if (sec < 10) {
-    return "0:0" + String(sec);
+    return "0" + String(sec);
   }
 
-  return "0:" + String(sec);
+  return String(sec);
 }
 
 String format_recording_time() {
   int rec_time_s = get_recording_time_s();
 
-  Serial.println(String(rec_time_s));
-
-  return "";
-
   if (rec_time_s > 60) {
-    return String(floor(rec_time_s / 60)) + ":" + String(check_leading_zero(rec_time_s % 60));
+    return String(floor(rec_time_s / 60), 0) + ":" + String(check_leading_zero(rec_time_s % 60));
   } else {
-    check_leading_zero(rec_time_s);
+    return "0:" + check_leading_zero(rec_time_s);
   }
 }
 
@@ -63,7 +62,7 @@ void draw_recording_time() {
   if (recording) {
     String elapsed_time = format_recording_time();
     // .c_str() https://stackoverflow.com/a/16810536
-    Paint_DrawString_EN(40, 100, elapsed_time.c_str(), &Font20, WHITE, BLACK);
+    Paint_DrawString_EN(100, 100, elapsed_time.c_str(), &Font24, WHITE, BLACK);
   }
 }
 
@@ -100,9 +99,6 @@ void draw_main_btn() {
 
 void toggle_recording() {
   recording = !recording;
-
-  if (recording) Serial.println("recording");
-  if (!recording) Serial.println("stopped recording");
 }
 
 void setup() {
@@ -137,14 +133,26 @@ void setup() {
 
   // listen to touch inputs
   while (true) {
+    delay_tick += 1;
+
     if (recording) {
+      if (rec_start_time_ms == 0) {
+        rec_start_time_ms = millis();
+      }
+
       recording_tick += 1;
-      recording_time_ms += 16;
+      recording_time_ms += 1; // used to be 16
     } else {
       if (recording_time_ms != 0) {
+        rec_start_time_ms = 0;
         recording_tick = 0;
         recording_time_ms = 0;
       }
+    }
+
+    // 60 fps
+    if (delay_tick % 16 != 0) {
+      continue;
     }
 
     clear_screen();
@@ -169,7 +177,7 @@ void setup() {
       }
     }
 
-    delay(16); // 60 fps
+    delay(1); // 60 fps
   }
 }
 
