@@ -43,7 +43,11 @@ The code is getting nasty already, haven't even touched ESP32 to RPi yet
 
 Screwing around with this weird string print shifting related to truncated float
 
+2:21 PM
 
+Dumb, delayed by moving videos from Pi this is a bottle neck even with OTG cable moving, it takes time
+
+I have to get one of those cables at some point
 
 ---
 
