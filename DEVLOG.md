@@ -49,6 +49,31 @@ Dumb, delayed by moving videos from Pi this is a bottle neck even with OTG cable
 
 I have to get one of those cables at some point
 
+2:54 PM
+
+Damn laptop just shutdown battery is indeed bad oh well
+
+It works for my need, second hand old laptop
+
+I'm working on the serial-based comms now hopefully no major roadblocks
+
+3:31 PM
+
+Strugglin on the serial comm
+
+Maybe a mistake, I considered setting up the ESP as an i2c slave
+
+4:06 PM
+
+This is not working, I'm getting a couple letters out of 5
+
+Apparently i2c is slower than uart ugh
+
+4:20 PM
+
+Ugh... just not reliable damn
+
+
 ---
 
 ### 04/02/2024

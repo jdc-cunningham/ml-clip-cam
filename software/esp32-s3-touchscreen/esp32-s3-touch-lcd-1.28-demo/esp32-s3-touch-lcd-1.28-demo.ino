@@ -11,6 +11,8 @@ CST816S touch(6, 7, 13, 5);	// sda, scl, rst, irq
 #define SS_PORT_RX 16
 #define ACTION_BTN 17 // eg. start/stop recording
 
+// EspSoftwareSerial::UART SoftSerial;
+
 // resolution 240x240
 
 int delay_tick = 0; // use for splitting specific delays eg. 16ms 60fps
@@ -113,11 +115,25 @@ void draw_main_btn() {
 
 void toggle_recording() {
   recording = !recording;
+
+  if (recording) Serial1.println("start"); // Serial1.write("start");
+  if (!recording) Serial1.println("stop"); // Serial1.write("stop");
+
+  // if (recording) SoftSerial.write("start"); SoftSerial.print("start"); Serial1.print("start");
+  // if (!recording) SoftSerial.write("stop"); SoftSerial.print("stop"); Serial1.print("stop");
 }
 
 void setup() {
   Serial.begin(115200);
   touch.begin();
+
+  // software serial to pi
+  // SoftSerial.begin(38400, SWSERIAL_8N1, SS_PORT_TX, SS_PORT_TX, false);
+  Serial1.begin(115200, SERIAL_8N1, SS_PORT_RX, SS_PORT_TX);
+
+  if (!Serial1) {
+    Serial.println("failed to start soft serial");
+  }
   
   // PSRAM Initialize
   if(psramInit()) {
