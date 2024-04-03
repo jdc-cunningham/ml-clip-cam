@@ -14,12 +14,14 @@ CST816S touch(6, 7, 13, 5);	// sda, scl, rst, irq
 // resolution 240x240
 
 bool recording = false;
+int recording_tick = 0; // increment every loop
 int recording_time_ms = 0; // ms increment
-int action_btn_touch_area[2][2] = {{40, 200}, {100, 240}};
+int action_btn_touch_area[2][2] = {{50, 170}, {190, 210}};
+int last_touch = 0;
 
 bool action_btn_touched(int touch_x, int touch_y) {
-  if (touch_x >= 40 and touch_x <= 100) {
-    if (touch_y >= 200 and touch_y <= 240) {
+  if (touch_x >= action_btn_touch_area[0][0] and touch_x <= action_btn_touch_area[1][0]) {
+    if (touch_y >= action_btn_touch_area[0][1] and touch_y <= action_btn_touch_area[1][1]) {
       return true;
     }
   }
@@ -35,28 +37,64 @@ int get_recording_time_s() {
   return recording_time_ms > 1000 ? floor(recording_time_ms / 1000) : 0;
 }
 
+String check_leading_zero(int sec) {
+  if (sec < 10) {
+    return "0:0" + String(sec);
+  }
+
+  return "0:" + String(sec);
+}
+
+String format_recording_time() {
+  int rec_time_s = get_recording_time_s();
+
+  Serial.println(String(rec_time_s));
+
+  return "";
+
+  if (rec_time_s > 60) {
+    return String(floor(rec_time_s / 60)) + ":" + String(check_leading_zero(rec_time_s % 60));
+  } else {
+    check_leading_zero(rec_time_s);
+  }
+}
+
+void draw_recording_time() {
+  if (recording) {
+    String elapsed_time = format_recording_time();
+    // .c_str() https://stackoverflow.com/a/16810536
+    Paint_DrawString_EN(40, 100, elapsed_time.c_str(), &Font20, WHITE, BLACK);
+  }
+}
+
+void draw_recording_text() {
+  if (recording) {
+    Paint_DrawString_EN(40, 140, "recording", &Font20, WHITE, BLACK);
+  }
+}
+
 void draw_recording_circle() {
-  bool on = recording_time_ms % 2 == 0;
+  bool on = recording_tick > 0 && recording_tick % 14 == 0;
 
   if (on) {
-    Paint_DrawCircle(250, 220, 15, RED, DOT_PIXEL_2X2, DRAW_FILL_FULL);
+    Paint_DrawCircle(190, 150, 8, RED, DOT_PIXEL_2X2, DRAW_FILL_FULL);
   } else {
-    Paint_DrawCircle(250, 220, 15, WHITE, DOT_PIXEL_2X2, DRAW_FILL_FULL);
+    Paint_DrawCircle(190, 150, 8, WHITE, DOT_PIXEL_2X2, DRAW_FILL_FULL);
   }
 }
 
 void draw_main_btn() {
   String which = "";
 
-  if (!recording) which = "Start";
-  if (recording) which = "Stop";
+  if (!recording) which = "start";
+  if (recording) which = "stop";
 
-  Paint_DrawLine(40, 200, 100, 240, GRAY, DOT_PIXEL_2X2, LINE_STYLE_SOLID);
+  Paint_DrawRectangle(50, 170, 190, 210, GRAY, DOT_PIXEL_2X2, DRAW_FILL_FULL);
 
-  if (which == "Start") {
-    Paint_DrawString_EN(100, 220, "Start", &Font20, BLACK, GRAY);
+  if (which == "start") {
+    Paint_DrawString_EN(85, 180, "start", &Font20, GRAY, BLACK);
   }else {
-    Paint_DrawString_EN(100, 220, "Stop", &Font20, BLACK, GRAY);
+    Paint_DrawString_EN(90, 180, "stop", &Font20, GRAY, BLACK);
   }
 }
 
@@ -100,22 +138,34 @@ void setup() {
   // listen to touch inputs
   while (true) {
     if (recording) {
+      recording_tick += 1;
       recording_time_ms += 16;
     } else {
       if (recording_time_ms != 0) {
+        recording_tick = 0;
         recording_time_ms = 0;
       }
     }
 
     clear_screen();
     draw_main_btn();
+    draw_recording_time();
+    draw_recording_text();
     draw_recording_circle();
 
     LCD_1IN28_Display(BlackImage);
     
+    // screen touched
     if (touch.available()) {
+      int now = millis();
+
+      if (last_touch > 0 && ((now - last_touch) < 1000)) {
+        continue; // avoid too fast touch due to fast refresh rate
+      }
+
       if (action_btn_touched(touch.data.x, touch.data.y)) {
         toggle_recording();
+        last_touch = millis();
       }
     }
 

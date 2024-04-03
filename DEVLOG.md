@@ -25,6 +25,10 @@ Engaging the Kornholio now
 
 Had a scare this morning, thought my SSD died, had to pull the power on desktop for it to recognize my drive
 
+11:48 AM
+
+Had to fix this inotify fs watches thing
+
 
 
 ---
