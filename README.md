@@ -2,7 +2,17 @@
 
 This is for filming an RC plane or POV recording
 
-<img src="hot.JPG"/>
+<img src="top-lcd.JPG"/>
+
+<br />
+
+<img src="side-view.JPG"/>
+
+<br />
+
+<img src="bottom-front-iso.JPG"/>
+
+<br />
 
 <img src="field.JPG"/>
 
