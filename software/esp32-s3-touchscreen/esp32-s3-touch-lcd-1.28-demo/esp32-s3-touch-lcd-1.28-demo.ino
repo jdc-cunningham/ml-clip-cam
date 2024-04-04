@@ -10,7 +10,6 @@ CST816S touch(6, 7, 13, 5);	// sda, scl, rst, irq
 // software serial
 #define SS_PORT_TX 15
 #define SS_PORT_RX 16
-#define ACTION_BTN 17 // eg. start/stop recording
 
 // EspSoftwareSerial::UART SoftSerial;
 byte data_to_echo = 0;
@@ -118,11 +117,8 @@ void draw_main_btn() {
 void toggle_recording() {
   recording = !recording;
 
-  if (recording) Serial1.println("start"); // Serial1.write("start");
-  if (!recording) Serial1.println("stop"); // Serial1.write("stop");
-
-  // if (recording) SoftSerial.write("start"); SoftSerial.print("start"); Serial1.print("start");
-  // if (!recording) SoftSerial.write("stop"); SoftSerial.print("stop"); Serial1.print("stop");
+  if (recording) Serial1.println("start");
+  if (!recording) Serial1.println("stop");
 }
 
 void setup() {
@@ -130,7 +126,6 @@ void setup() {
   touch.begin();
 
   // software serial to pi
-  // SoftSerial.begin(38400, SWSERIAL_8N1, SS_PORT_TX, SS_PORT_TX, false);
   Serial1.begin(115200, SERIAL_8N1, SS_PORT_RX, SS_PORT_TX);
   Serial1.setTimeout(1);
 
