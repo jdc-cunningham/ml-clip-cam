@@ -43,7 +43,9 @@ class Video():
       if (self.msg == 'stop'):
         self.stop_recording()
       if (self.msg == 'file count'):
-        self.control.send_to_esp32(str(self.get_file_count()) + ' files')
+        file_count = self.get_file_count()
+        files_txt = 'file' if file_count == 1 else 'files'
+        self.control.send_to_esp32(str(file_count) + ' ' + files_txt)
 
       self.msg = ''
 
