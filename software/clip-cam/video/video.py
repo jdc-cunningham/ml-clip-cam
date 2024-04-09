@@ -30,3 +30,7 @@ class Video():
     capture_path = base_path + "/videos/"
     # -1 for gitkeep file
     return len([name for name in os.listdir(capture_path) if os.path.isfile(os.path.join(capture_path, name))]) - 1
+  
+  def control(self, msg):
+    if (msg == 'start'):
+      print('start')

@@ -1,8 +1,10 @@
 from threading import Thread
-from websocket.websocket import WebSocket
 from video.video import Video
+from control.control import Control
+from system.system import System
 
 video = Video()
-socket = WebSocket(video)
+control = Control()
+system = System(video, control)
 
-Thread(target=socket.start).start()
+Thread(target=system.start).start()
