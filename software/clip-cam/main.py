@@ -1,10 +1,19 @@
 from threading import Thread
 from video.video import Video
 from control.control import Control
-from system.system import System
 
-video = Video()
+import time
+
 control = Control()
-system = System(video, control)
+video = Video(control)
 
-Thread(target=system.start).start()
+def start():
+  while True:
+    msg = control.read() # msg from ESP32
+
+    if (msg):
+      video.handle_msg(msg)
+
+    time.sleep(0.05)
+
+Thread(target=start).start()
