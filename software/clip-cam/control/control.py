@@ -1,7 +1,7 @@
 import serial
 import time
 
-class control():
+class Control():
   def __init__(self):
     self.esp32_serial = serial.Serial(port='/dev/serial0', baudrate=115200, timeout=.01)
 
