@@ -23,6 +23,8 @@ int recording_time_ms = 0; // ms increment
 int rec_start_time_ms = 0;
 int action_btn_touch_area[2][2] = {{50, 170}, {190, 210}};
 int last_touch = 0;
+bool pi_ready = false;
+String file_count = "0 files";
 
 bool action_btn_touched(int touch_x, int touch_y) {
   if (touch_x >= action_btn_touch_area[0][0] and touch_x <= action_btn_touch_area[1][0]) {
@@ -99,6 +101,10 @@ void draw_recording_circle() {
   }
 }
 
+void draw_waiting() {
+  Paint_DrawString_EN(20, 110, "waiting for pi", &Font20, WHITE, BLACK);
+}
+
 void draw_main_btn() {
   String which = "";
 
@@ -108,6 +114,7 @@ void draw_main_btn() {
   Paint_DrawRectangle(50, 170, 190, 210, GRAY, DOT_PIXEL_2X2, DRAW_FILL_FULL);
 
   if (which == "start") {
+    Paint_DrawString_EN(70, 130, file_count.c_str(), &Font20, WHITE, BLACK);
     Paint_DrawString_EN(85, 180, "start", &Font20, GRAY, BLACK);
   }else {
     Paint_DrawString_EN(90, 180, "stop", &Font20, GRAY, BLACK);
@@ -118,7 +125,7 @@ void toggle_recording() {
   recording = !recording;
 
   if (recording) Serial1.println("start");
-  if (!recording) Serial1.println("stop");
+  if (!recording) Serial1.println("stop"); Serial1.println("file count");
 }
 
 void setup() {
@@ -184,7 +191,14 @@ void setup() {
     }
 
     clear_screen();
-    draw_main_btn();
+
+
+    if (pi_ready) {
+      draw_main_btn();
+    } else {
+      draw_waiting();
+    }
+
     draw_recording_time();
     draw_recording_text();
     draw_recording_circle();
@@ -206,7 +220,16 @@ void setup() {
     }
 
     if (Serial1.available()) {
-      Serial.println(Serial1.readString());
+      String msg = Serial1.readString();
+
+      if (msg == "ready") {
+        pi_ready = true; 
+        Serial1.println("file count");
+      }
+
+      if (msg.indexOf("files") > -1) {
+        file_count = msg;
+      }
     }
 
     delay(1); // 60 fps
