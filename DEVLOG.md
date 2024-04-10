@@ -27,3 +27,11 @@ Alright got the code working from boot
 Had to put some time into the body/fix it after it fell off my hat ha
 
 Prepping to go to the park now
+
+2:45 PM
+
+Ooh man have a corrupt git problem eg. `error: object file .git/...` `fatal: loose object ...`
+
+damn
+
+probably should record the video outside of git if that helps
