@@ -3,14 +3,19 @@ import time
 
 from picamera2 import Picamera2
 from picamera2.encoders import H264Encoder
+from libcamera import controls
 
 class Video():
-  def __init__(self):
+  def __init__(self, control):
     self.picam2 = Picamera2()
-    self.video_config = self.picam2.create_video_configuration(main={"size": (1920, 1080)}, controls={'FrameRate': 50})
+    self.video_config = self.picam2.create_video_configuration(main={"size": (1920, 1080)}, controls={'FrameRate': 30})
     self. picam2.configure(self.video_config)
+    self.picam2.set_controls({'AfMode': controls.AfModeEnum.Manual, 'LensPosition': 0.0})
     self.encoder = H264Encoder(10000000)
     self.recording = False
+    self.recording_time = 5 * 60 # 5 mins
+    self.control = control
+    self.msg = ""
   
   def start_recording(self):
     if (self.recording): return
@@ -30,3 +35,18 @@ class Video():
     capture_path = base_path + "/videos/"
     # -1 for gitkeep file
     return len([name for name in os.listdir(capture_path) if os.path.isfile(os.path.join(capture_path, name))]) - 1
+  
+  def handle_msg(self):
+    while True:
+      if (self.msg == 'start'):
+        self.start_recording()
+      if (self.msg == 'stop'):
+        self.stop_recording()
+      if (self.msg == 'file count'):
+        file_count = self.get_file_count()
+        files_txt = 'file' if file_count == 1 else 'files'
+        self.control.send_to_esp32(str(file_count) + ' ' + files_txt)
+
+      self.msg = ''
+
+      time.sleep(0.05)

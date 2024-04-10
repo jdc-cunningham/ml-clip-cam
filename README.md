@@ -2,7 +2,7 @@
 
 This is for filming an RC plane or POV recording
 
-<img src="top-lcd.JPG"/>
+<img src="field-iso.JPG"/>
 
 <br />
 
@@ -10,11 +10,11 @@ This is for filming an RC plane or POV recording
 
 <br />
 
-<img src="bottom-front-iso.JPG"/>
+<img src="field.JPG"/>
 
 <br />
 
-<img src="field.JPG"/>
+<img src="top-lcd.JPG"/>
 
 The ML is just finding the RC plane in the sky, focus is for me to learn more about training my own model.
 
