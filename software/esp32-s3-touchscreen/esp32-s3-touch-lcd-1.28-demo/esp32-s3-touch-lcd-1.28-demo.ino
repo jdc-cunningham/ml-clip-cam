@@ -92,7 +92,7 @@ void draw_recording_text() {
 }
 
 void draw_recording_circle() {
-  bool on = recording_tick > 0 && recording_tick % 18 == 0; // 16 is solid
+  bool on = recording_tick > 0 && recording_tick % 2 == 0; // 16 is solid
 
   if (on) {
     Paint_DrawCircle(190, 150, 8, RED, DOT_PIXEL_2X2, DRAW_FILL_FULL);
@@ -126,6 +126,14 @@ void toggle_recording() {
 
   if (recording) Serial1.println("start");
   if (!recording) Serial1.println("stop"); Serial1.println("file count");
+}
+
+bool screen_idle() {
+  if (last_touch > 0 && ((millis() - last_touch) > 5000)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 void setup() {
@@ -188,6 +196,12 @@ void setup() {
       }
     }
 
+    if (screen_idle()) {
+      LCD_1IN28_TOGGLE_SCREEN(false);
+    } else {
+      LCD_1IN28_TOGGLE_SCREEN(true);
+    }
+    
     clear_screen();
 
     if (pi_ready) {
@@ -212,8 +226,9 @@ void setup() {
 
       if (action_btn_touched(touch.data.x, touch.data.y)) {
         toggle_recording();
-        last_touch = millis();
       }
+
+      last_touch = now;
     }
 
     if (Serial1.available()) {

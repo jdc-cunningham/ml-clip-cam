@@ -25,3 +25,12 @@ Oh I should sample it while it's recording
 
 Recording pulls a lot no surprise, somewhere around 470ma peaks beyond 500 and goes down to 455ma too
 
+2:58 PM
+
+Damn... today is wasted oh well
+
+Make that video at least
+
+3:31 PM
+
+Had to write new function in header file too to be defined
