@@ -92,7 +92,7 @@ void draw_recording_text() {
 }
 
 void draw_recording_circle() {
-  bool on = recording_tick > 0 && recording_tick % 2 == 0; // 16 is solid
+  bool on = recording_tick > 0 && recording_tick % 2 == 0;
 
   if (on) {
     Paint_DrawCircle(190, 150, 8, RED, DOT_PIXEL_2X2, DRAW_FILL_FULL);
