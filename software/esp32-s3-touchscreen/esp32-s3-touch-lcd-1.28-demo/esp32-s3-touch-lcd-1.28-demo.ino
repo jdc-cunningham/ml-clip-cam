@@ -23,7 +23,7 @@ int recording_time_ms = 0; // ms increment
 int rec_start_time_ms = 0;
 int action_btn_touch_area[2][2] = {{50, 170}, {190, 210}};
 int last_touch = 0;
-bool pi_ready = true; // set to true for dev
+bool pi_ready = false; // set to true for dev
 String file_count = "0 files";
 
 bool action_btn_touched(int touch_x, int touch_y) {
