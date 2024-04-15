@@ -23,7 +23,7 @@ int recording_time_ms = 0; // ms increment
 int rec_start_time_ms = 0;
 int action_btn_touch_area[2][2] = {{50, 170}, {190, 210}};
 int last_touch = 0;
-bool pi_ready = false;
+bool pi_ready = false; // set to true for dev
 String file_count = "0 files";
 
 bool action_btn_touched(int touch_x, int touch_y) {
@@ -92,7 +92,7 @@ void draw_recording_text() {
 }
 
 void draw_recording_circle() {
-  bool on = recording_tick > 0 && recording_tick % 18 == 0; // 16 is solid
+  bool on = recording_tick > 0 && recording_tick % 2 == 0;
 
   if (on) {
     Paint_DrawCircle(190, 150, 8, RED, DOT_PIXEL_2X2, DRAW_FILL_FULL);
@@ -128,7 +128,18 @@ void toggle_recording() {
   if (!recording) Serial1.println("stop"); Serial1.println("file count");
 }
 
+bool screen_idle() {
+  if (last_touch > 0 && ((millis() - last_touch) > 5000)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 void setup() {
+  // 40 MHz crystal, 10 -> 1ms delay is roughly 1 sec, 2 sec slow in 10 sec sample
+  setCpuFrequencyMhz(10);
+
   Serial.begin(115200);
   touch.begin();
 
@@ -185,13 +196,13 @@ void setup() {
       }
     }
 
-    // 60 fps
-    if (delay_tick % 16 != 0) {
-      continue;
+    if (screen_idle()) {
+      LCD_1IN28_TOGGLE_SCREEN(false);
+    } else {
+      LCD_1IN28_TOGGLE_SCREEN(true);
     }
-
+    
     clear_screen();
-
 
     if (pi_ready) {
       draw_main_btn();
@@ -215,8 +226,9 @@ void setup() {
 
       if (action_btn_touched(touch.data.x, touch.data.y)) {
         toggle_recording();
-        last_touch = millis();
       }
+
+      last_touch = now;
     }
 
     if (Serial1.available()) {
@@ -232,7 +244,7 @@ void setup() {
       }
     }
 
-    delay(1); // 60 fps
+    delay(1);
   }
 }
 

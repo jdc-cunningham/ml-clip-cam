@@ -346,6 +346,14 @@ static void LCD_1IN28_SetAttributes(UBYTE Scan_dir)
 	LCD_1IN28_SendData_8Bit(MemoryAccessReg);	//0x08 set RGB
 }
 
+void LCD_1IN28_TOGGLE_SCREEN(bool on) {
+	if (on) {
+		DEV_SET_PWM(100);
+	} else {
+		DEV_SET_PWM(1); // not completely off
+	}
+}
+
 /********************************************************************************
 function :	Initialize the lcd
 parameter:
@@ -353,7 +361,7 @@ parameter:
 void LCD_1IN28_Init(UBYTE Scan_dir)
 {
     //Turn on the backlight
-    //DEV_SET_PWM(100);
+    // DEV_SET_PWM(100);
     //Hardware reset
     LCD_1IN28_Reset();
 
