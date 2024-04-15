@@ -34,3 +34,13 @@ Make that video at least
 3:31 PM
 
 Had to write new function in header file too to be defined
+
+3:36 PM
+
+The dim works but I can see a flashing
+
+Also the touch is laggy where it can retrigger the record after you push stop.
+
+Not a huge deal... once the new design is out and swappable batteries is a thing then this won't be such a big deal
+
+There are many more worries to reduce power consumption but it's attached to an rpi zero 2 which kind of defeats power saving attempts
